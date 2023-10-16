@@ -1,34 +1,37 @@
 package page
 
 import de.qytera.qtaf.core.config.ConfigurationFactory
+import de.qytera.qtaf.core.guice.annotations.Step
+import de.qytera.qtaf.testng.context.QtafTestNGContext
 import org.openqa.selenium.By
-import org.openqa.selenium.WebDriver
-import utils.WebDriverSingleton
 
-abstract class BasePage {
-    private final static String BASE_URL = ConfigurationFactory.getInstance().getString('driver.remoteUrl')
-
-    private WebDriver driver
+abstract class BasePage extends QtafTestNGContext {
+    private static final String BASE_URL_KEY = 'driver.remoteUrl'
+    private static String baseUrl
+    String path
 
     BasePage() {
-        driver = WebDriverSingleton.getInstance().getDriver()
+        baseUrl = ConfigurationFactory.getInstance().getString(BASE_URL_KEY)
         String.mixin NavigationMethodCategory
     }
 
-    abstract void navigateToPage()
+    @Step(name = 'Navigate to Page', description = "Navigate to Page: this is a super class step")
+    void navigateToPage() {
+        path.navigate()
+    }
 
     static class NavigationMethodCategory {
         static void navigate(String suffix) {
-            WebDriverSingleton.getInstance().getDriver().get "${BASE_URL}${suffix}"
+            driver.get "${baseUrl}${suffix}"
         }
 
         static void click(String linkText) {
-            def link = WebDriverSingleton.getInstance().getDriver().findElement By.linkText(linkText)
+            def link = driver.findElement By.linkText(linkText)
             link.click()
         }
 
         static String toAbsoluteURL(String suffix) {
-            "${BASE_URL}${suffix}"
+            "${baseUrl}${suffix}"
         }
     }
 }
