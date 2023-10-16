@@ -1,7 +1,6 @@
 import de.qytera.qtaf.core.config.annotations.TestFeature
 import org.testng.Assert
 import org.testng.annotations.Test
-import page.Page404
 import page.PageMain
 
 @TestFeature(name = 'Test Main Page',

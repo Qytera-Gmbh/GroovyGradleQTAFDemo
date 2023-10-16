@@ -4,27 +4,22 @@ import io.github.bonigarcia.wdm.WebDriverManager
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
 
+@Singleton
 class WebDriverSingleton {
-    private static WebDriver driver
+    private WebDriver driver
 
-    private WebDriverSingleton() {}
-
-    static WebDriver getDriver() {
+    WebDriver getDriver() {
         if (!driver) {
             WebDriverManager.chromedriver().setup()
             driver = new ChromeDriver()
         }
-        return driver
+
+        driver
     }
 
-    static void closeDriver() {
+    void quitDriver() {
         if (driver) {
-            try {
-                driver.close()
-            } catch (e) {
-                // nothing to do here
-            }
-
+            driver.quit()
             driver = null
         }
     }

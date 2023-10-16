@@ -7,10 +7,10 @@ import utils.WebDriverSingleton
 abstract class BasePage {
     private final static String BASE_URL = 'https://www.qytera.de'
 
-    private static WebDriver driver
+    private WebDriver driver
 
     BasePage() {
-        driver = WebDriverSingleton.getDriver()
+        driver = WebDriverSingleton.getInstance().getDriver()
         String.mixin NavigationMethodCategory
     }
 
@@ -18,11 +18,11 @@ abstract class BasePage {
 
     static class NavigationMethodCategory {
         static void navigate(String suffix) {
-            driver.get "${BASE_URL}${suffix}"
+            WebDriverSingleton.getInstance().getDriver().get "${BASE_URL}${suffix}"
         }
 
         static void click(String linkText) {
-            def link = driver.findElement By.linkText(linkText)
+            def link = WebDriverSingleton.getInstance().getDriver().findElement By.linkText(linkText)
             link.click()
         }
 
