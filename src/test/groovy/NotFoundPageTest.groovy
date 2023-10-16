@@ -8,7 +8,7 @@ import page.PageNotFound
 @TestFeature(name = 'Test Not Found Page (404)',
         description = 'Test Not Found Page (404)')
 class NotFoundPageTest extends QtafTestNGContext {
-    def pageNotFound
+    PageNotFound pageNotFound
 
     @BeforeMethod
     void setup() {
@@ -16,7 +16,7 @@ class NotFoundPageTest extends QtafTestNGContext {
     }
 
     @Test
-    void 'test main page button from 404 page - find and click on "Startseite" and check new URL'() {
+    void 'test main page button from 404 page - find and click on -Startseite- and check new URL'() {
         pageNotFound.navigateToPage()
         Assert.assertEquals driver.getCurrentUrl(), '/not-existing-URL'.toAbsoluteURL()
 

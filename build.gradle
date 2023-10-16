@@ -13,7 +13,7 @@ repositories {
 dependencies {
     testImplementation 'org.apache.groovy:groovy:4.0.14'
 	testImplementation 'de.qytera:qtaf-core:0.2.8'
-	testImplementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+    testImplementation 'de.qytera:qtaf-html-report-plugin:0.2.8'
 }
 
 test {

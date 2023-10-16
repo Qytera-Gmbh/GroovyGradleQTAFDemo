@@ -1,15 +1,23 @@
 {
+  "tests": {
+    "suite": {
+      "name": "TestQytera"
+    },
+    "package": "",
+    "continueOnAssertionFailure": true
+  },
   "driver": {
     "name": "chrome",
+    "version": "118",
     "remoteUrl": "https://www.qytera.de",
-    "implicitWaitTimeout": 10,
+    "implicitWaitTimeout": 30,
     "quitAfterTesting": true,
     "headless": false,
     "screenshots": {
       "beforeScenario": true,
       "afterScenario": true,
-      "beforeStep": false,
-      "afterStep": false,
+      "beforeStep": true,
+      "afterStep": true,
       "afterStepFailure": true
     }
   },
@@ -21,5 +29,8 @@
   },
   "framework": {
     "packageNames": []
+  },
+  "console": {
+    "colors": true
   }
 }

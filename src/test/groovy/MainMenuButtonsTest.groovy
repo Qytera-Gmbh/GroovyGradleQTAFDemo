@@ -8,7 +8,7 @@ import page.PageMain
 @TestFeature(name = 'Test Main Menu Buttons',
         description = 'Test Main Menu Buttons')
 class MainMenuButtonsTest extends QtafTestNGContext {
-    def pageMain
+    PageMain pageMain
 
     @BeforeMethod
     void setup() {
@@ -16,7 +16,7 @@ class MainMenuButtonsTest extends QtafTestNGContext {
     }
 
     @Test
-    void 'test main menu - find and click on "Lösungen" and check new URL'() {
+    void 'test main menu - find and click on -Lösungen- and check new URL'() {
         pageMain.navigateToPage()
 
         pageMain.clickSolutionPageButton()
@@ -24,7 +24,7 @@ class MainMenuButtonsTest extends QtafTestNGContext {
     }
 
     @Test
-    void 'test main menu - find and click on "Seminare" and check new URL'() {
+    void 'test main menu - find and click on -Seminare- and check new URL'() {
         pageMain.navigateToPage()
 
         pageMain.clickSeminarsPageButton()

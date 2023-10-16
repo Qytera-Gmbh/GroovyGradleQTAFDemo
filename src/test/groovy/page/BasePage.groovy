@@ -15,7 +15,7 @@ abstract class BasePage extends QtafTestNGContext {
         String.mixin NavigationMethodCategory
     }
 
-    @Step(name = 'Navigate to Page', description = "Navigate to Page: this is a super class step")
+    @Step(name = 'Navigate to Page', description = 'Navigate to Page')
     void navigateToPage() {
         path.navigate()
     }

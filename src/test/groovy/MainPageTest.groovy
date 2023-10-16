@@ -8,8 +8,8 @@ import page.PageMain
         description = 'Test Main Page')
 class MainPageTest extends QtafTestNGContext {
     @Test
-    void 'test main page - find and click on "Beratungstermin vereinbaren" and check new URL'() {
-        def pageMain = PageMain.instance
+    void 'test main page - find and click on -Beratungstermin vereinbaren- and check new URL'() {
+        PageMain pageMain = PageMain.instance
         pageMain.navigateToPage()
 
         pageMain.clickConsultingButton()
