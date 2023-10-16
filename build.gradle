@@ -1,0 +1,21 @@
+plugins {
+    id 'groovy'
+	id 'idea'
+}
+
+group = 'de.qytera'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.apache.groovy:groovy:4.0.14'
+	testImplementation 'de.qytera:qtaf-core:0.2.8'
+	testImplementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+}
+
+test {
+    useTestNG()
+}

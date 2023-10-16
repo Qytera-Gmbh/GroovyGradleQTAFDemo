@@ -1,5 +1,8 @@
+package page
+
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
+import utils.WebDriverSingleton
 
 abstract class BasePage {
     private final static String BASE_URL = 'https://www.qytera.de'
