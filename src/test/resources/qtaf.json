@@ -4,7 +4,7 @@
       "name": "TestQytera"
     },
     "package":"de.qytera.ggqd.tests",
-    "continueOnAssertionFailure": true
+    "continueOnAssertionFailure": false
   },
   "driver": {
     "name": "chrome",

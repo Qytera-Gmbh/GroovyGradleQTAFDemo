@@ -17,12 +17,6 @@ abstract class APage extends QtafTestNGContext {
         String.mixin NavigationMethodCategory
     }
 
-    def steps(Closure cl) {
-        cl.delegate = this
-        cl.resolveStrategy = Closure.DELEGATE_FIRST
-        cl.call()
-    }
-
     static class NavigationMethodCategory {
         static void navigate(String suffix) {
             driver.get "$baseUrl$suffix"
@@ -41,16 +35,19 @@ abstract class APage extends QtafTestNGContext {
     @Step(name = 'Navigate to Page', description = 'Open the website https://www.qytera.de with sub-path')
     void navigateToPage() {
         path.navigate()
-        assertEquals driver.currentUrl, path.toAbsoluteURL()
+        def actual = driver.currentUrl
+        assertEquals actual, path.toAbsoluteURL()
     }
 
     @Step(name = 'Check headline', description = 'Check that the headline matches the given text')
-    void checkHeadline(String expectedText) {
-        assertEquals $('h1').text(), expectedText
+    void checkHeadline(String expected) {
+        def actual = $('h1').text()
+        assertEquals actual, expected
     }
 
     @Step(name = 'Check current URL', description = 'Check that the current URL matches the given one')
-    void checkCurrentUrl(String expectedUrl) {
-        assertEquals driver.currentUrl, expectedUrl.toAbsoluteURL()
+    void checkCurrentUrl(String expected) {
+        def actual = driver.currentUrl
+        assertEquals actual, expected.toAbsoluteURL()
     }
 }

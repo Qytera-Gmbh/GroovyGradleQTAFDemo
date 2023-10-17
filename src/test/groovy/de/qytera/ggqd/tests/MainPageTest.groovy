@@ -7,14 +7,13 @@ import de.qytera.ggqd.pages.MainPage
 import org.testng.annotations.Test
 
 @TestFeature
-class MainPageTest extends QtafTestNGContext {
-    @Test(testName = "GGQD-001", description = "test something")
-    void "test something"() {
-        def page = load(MainPage)
-        page.steps {
-            navigateToPage:
-            checkCurrentUrl: "https://www.qytera.de/"
-            checkHeadline: "Die Experten in Continuous Testing und Testautomatisierung"
+class MainPageTest extends ATest {
+    @Test(testName = "GGQD-001", description = "test loading of main page with correct headline")
+    void "test loading of main page with correct headline"() {
+        withPage(load(MainPage)) {
+            navigateToPage()
+            checkCurrentUrl '/'
+            checkHeadline 'Die Experten in Continuous Testing und Testautomatisierung'
         }
     }
 }
