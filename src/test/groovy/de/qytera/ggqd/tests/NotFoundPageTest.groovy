@@ -1,16 +1,17 @@
+package de.qytera.ggqd.tests
+
 import de.qytera.qtaf.core.config.annotations.TestFeature
 import de.qytera.qtaf.testng.context.QtafTestNGContext
 import org.testng.Assert
-import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
-import page.PageNotFound
+import de.qytera.ggqd.pages.NotFoundPage
 
 @TestFeature(
         name = 'Test Not Found Page (404)',
         description = 'Test Not Found Page (404)'
 )
 class NotFoundPageTest extends QtafTestNGContext {
-    PageNotFound pageNotFound = PageNotFound.instance
+    NotFoundPage pageNotFound = NotFoundPage.instance
 
     @Test(
             testName = "GGQD-004",

@@ -3,7 +3,7 @@
     "suite": {
       "name": "TestQytera"
     },
-    "package": "",
+    "package":"de.qytera.ggqd.tests",
     "continueOnAssertionFailure": true
   },
   "driver": {
@@ -28,7 +28,7 @@
     "enabled": true
   },
   "framework": {
-    "packageNames": []
+    "packageNames": ["de.qytera.ggqd"]
   },
   "console": {
     "colors": true

@@ -12,8 +12,8 @@ repositories {
 
 dependencies {
     testImplementation 'org.apache.groovy:groovy:4.0.14'
-	testImplementation 'de.qytera:qtaf-core:0.2.8'
-    testImplementation 'de.qytera:qtaf-html-report-plugin:0.2.8'
+	testImplementation 'de.qytera:qtaf-core:0.2.6'
+    testImplementation 'de.qytera:qtaf-html-report-plugin:0.2.6'
 }
 
 test {

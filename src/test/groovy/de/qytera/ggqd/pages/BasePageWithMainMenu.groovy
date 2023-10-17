@@ -1,6 +1,8 @@
-package page
+package de.qytera.ggqd.pages
 
 import de.qytera.qtaf.core.guice.annotations.Step
+import org.openqa.selenium.By
+import org.openqa.selenium.Keys
 
 abstract class BasePageWithMainMenu extends BasePage {
     @Step(name = 'Click main page button', description = 'Click main page button')
@@ -36,5 +38,17 @@ abstract class BasePageWithMainMenu extends BasePage {
     @Step(name = 'Click contact page button', description = 'Click contact page button')
     void clickContactPageButton() {
         'Kontakt'.click()
+    }
+
+    @Step(name = 'Click search button', description = 'Click search button')
+    void clickSearchButton() {
+        'Suche'.click()
+    }
+
+    @Step(name = 'type search text into text field and submit', description = 'type search text into text field and submit')
+    void typeIntoSearchTextFieldAndSubmit(String searchText) {
+        def searchTextField = driver.findElement By.id('edit-search-block-form--2')
+        searchTextField.sendKeys(searchText)
+        searchTextField.sendKeys(Keys.RETURN)
     }
 }

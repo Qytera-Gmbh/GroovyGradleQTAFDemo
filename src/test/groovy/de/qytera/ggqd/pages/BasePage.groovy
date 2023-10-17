@@ -1,4 +1,4 @@
-package page
+package de.qytera.ggqd.pages
 
 import de.qytera.qtaf.core.config.ConfigurationFactory
 import de.qytera.qtaf.core.guice.annotations.Step

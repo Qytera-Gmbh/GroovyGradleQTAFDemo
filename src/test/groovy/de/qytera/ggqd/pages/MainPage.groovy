@@ -1,10 +1,10 @@
-package page
+package de.qytera.ggqd.pages
 
 
 import de.qytera.qtaf.core.guice.annotations.Step
 
 @Singleton
-class PageMain extends BasePageWithMainMenu {
+class MainPage extends BasePageWithMainMenu {
     {
         path = '/'
     }
