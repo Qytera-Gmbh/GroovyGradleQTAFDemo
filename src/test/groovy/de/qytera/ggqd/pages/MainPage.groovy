@@ -9,6 +9,6 @@ class MainPage extends APageWithMainMenu {
 
     @Step(name = 'Click consulting button', description = 'Click consulting button')
     void clickConsultingButton() {
-        'Beratungstermin vereinbaren'.click()
+        'Beratungstermin vereinbaren'.findLink().click()
     }
 }
