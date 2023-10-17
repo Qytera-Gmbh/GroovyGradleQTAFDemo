@@ -8,14 +8,12 @@ import page.PageMain
 @TestFeature(name = 'Test Main Menu Buttons',
         description = 'Test Main Menu Buttons')
 class MainMenuButtonsTest extends QtafTestNGContext {
-    PageMain pageMain
+    PageMain pageMain = PageMain.instance
 
-    @BeforeMethod
-    void setup() {
-        pageMain = PageMain.instance
-    }
-
-    @Test
+    @Test(
+            testName = "GGQD-001",
+            description = "test main menu - find and click on -Lösungen- and check new URL"
+    )
     void 'test main menu - find and click on -Lösungen- and check new URL'() {
         pageMain.navigateToPage()
 
@@ -23,7 +21,10 @@ class MainMenuButtonsTest extends QtafTestNGContext {
         Assert.assertEquals driver.getCurrentUrl(), '/testing-solutions'.toAbsoluteURL()
     }
 
-    @Test
+    @Test(
+            testName = "GGQD-002",
+            description = "test main menu - find and click on -Seminare- and check new URL"
+    )
     void 'test main menu - find and click on -Seminare- and check new URL'() {
         pageMain.navigateToPage()
 

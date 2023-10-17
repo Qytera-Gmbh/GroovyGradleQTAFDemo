@@ -7,7 +7,10 @@ import page.PageMain
 @TestFeature(name = 'Test Main Page',
         description = 'Test Main Page')
 class MainPageTest extends QtafTestNGContext {
-    @Test
+    @Test(
+            testName = "GGQD-003",
+            description = "test main page - find and click on -Beratungstermin vereinbaren- and check new URL"
+    )
     void 'test main page - find and click on -Beratungstermin vereinbaren- and check new URL'() {
         PageMain pageMain = PageMain.instance
         pageMain.navigateToPage()

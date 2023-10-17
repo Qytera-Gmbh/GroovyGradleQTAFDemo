@@ -19,3 +19,13 @@ dependencies {
 test {
     useTestNG()
 }
+
+clean.doFirst {
+    delete "${rootDir}/logs/"
+    println "clean ${rootDir}/logs/"
+
+    delete fileTree('.') {
+        include 'application*.log'
+    }
+    println "clean ./application*.log"
+}
