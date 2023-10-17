@@ -10,73 +10,73 @@ class MainPageTest extends QtafTestNGContext {
     @Test(testName = 'GGQD-Main-001', description = 'test loading of main page with correct headline')
     void 'test loading of main page with correct headline'() {
         load(MainPage).with {
-            navigateToPage()
-            checkCurrentUrl '/'
-            checkHeadline 'Die Experten in Continuous Testing und Testautomatisierung'
+            'navigate to page'()
+            'current url should be' '/'
+            'current headline should be' 'Die Experten in Continuous Testing und Testautomatisierung'
         }
     }
 
     @Test(testName = 'GGQD-Main-002', description = 'test click on consulting button leads to appointment page')
     void 'test click on consulting button leads to appointment page'() {
         load(MainPage).with {
-            navigateToPage()
-            clickConsultingButton()
-            checkCurrentUrl('/telefon-termin')
-            checkHeadline 'Die Experten in Continuous Testing und Testautomatisierung'
+            'navigate to page'()
+            'click Consulting button'()
+            'current url should be' '/telefon-termin'
+            'current headline should be' 'Die Experten in Continuous Testing und Testautomatisierung'
         }
     }
 
     @Test(testName = 'GGQD-Main-003', description = 'test click on -Solutions- in top menu')
     void 'test click on -Solutions- in top menu'() {
         load(MainPage).with {
-            navigateToPage()
-            clickSolutionPageButton()
-            checkCurrentUrl('/testing-solutions')
+            'navigate to page'()
+            'click Solution Page button'()
+            'current url should be' '/testing-solutions'
         }
     }
 
     @Test(testName = 'GGQD-Main-004', description = 'test click on -Seminars- in top menu')
     void 'test click on -Seminars- in top menu'() {
         load(MainPage).with {
-            navigateToPage()
-            clickSeminarsPageButton()
-            checkCurrentUrl('/seminare-trainings')
+            'navigate to page'()
+            'click Seminars Page button'()
+            'current url should be' '/seminare-trainings'
         }
     }
 
     @Test(testName = 'GGQD-Main-005', description = 'test click on -Knowledge- in top menu')
     void 'test click on -Knowledge- in top menu'() {
         load(MainPage).with {
-            navigateToPage()
-            clickKnowledgePageButton()
-            checkCurrentUrl('/wissen')
+            'navigate to page'()
+            'click Knowledge Page button'()
+            'current url should be' '/wissen'
         }
     }
 
     @Test(testName = 'GGQD-Main-006', description = 'test click on -Career- in top menu')
     void 'test click on -Career- in top menu'() {
         load(MainPage).with {
-            navigateToPage()
-            clickCareerPageButton()
-            checkCurrentUrl('/karriere')
+            'navigate to page'()
+            'click Career Page button'()
+            'current url should be' '/karriere'
         }
     }
 
     @Test(testName = 'GGQD-Main-007', description = 'test click on -Company- in top menu')
     void 'test click on -Company- in top menu'() {
         load(MainPage).with {
-            navigateToPage()
-            clickCompanyPageButton()
-            checkCurrentUrl('/unternehmen')
+            'navigate to page'()
+            'click Company Page button'()
+            'current url should be' '/unternehmen'
         }
     }
 
     @Test(testName = 'GGQD-Main-008', description = 'test click on -Contact- in top menu')
     void 'test click on -Contact- in top menu'() {
         load(MainPage).with {
-            navigateToPage()
-            clickContactPageButton()
-            checkCurrentUrl('/kontakt')
+            'navigate to page'()
+            'click Contact Page button'()
+            'current url should be' '/kontakt'
         }
     }
 }

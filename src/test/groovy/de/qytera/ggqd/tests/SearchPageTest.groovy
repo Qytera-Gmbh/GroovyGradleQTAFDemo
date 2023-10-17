@@ -11,21 +11,21 @@ class SearchPageTest extends QtafTestNGContext {
     @Test(testName = 'GGQD-Search-001', description = 'test search bar of top menu with word -TEST-')
     void 'test search bar of top menu with word -TEST-'() {
         load(SearchPage).with {
-            navigateToPage()
-            checkCurrentUrl '/search/node'
-            checkHeadline 'Die Experten in Continuous Testing und Testautomatisierung'
-            typeIntoSearchBoxAndSubmit 'edit-search-block-form--2', 'TEST'
-            findClassAndCheckAmount 'search-snippet-info', 10
+            'navigate to page'()
+            'current url should be' '/search/node'
+            'current headline should be' 'Die Experten in Continuous Testing und Testautomatisierung'
+            'type into searchbox and submit' 'edit-search-block-form--2', 'TEST'
+            'elements with given class are expected' 'search-snippet-info', 10
         }
     }
 
     @Test(testName = 'GGQD-Search-002', description = 'test search bar of top menu with word -TEST- and filter -ISTQB-')
     void 'test search bar of top menu with word -TEST- and filter -ISTQB-'() {
         load(SearchPage).with {
-            navigateToPage()
-            checkCurrentUrl '/search/node'
-            typeIntoSearchBoxAndSubmit 'edit-search-block-form--2', 'TEST'
-            findClassAndCheckFilteredAmount 'search-snippet-info', 'ISTQB', 4
+            'navigate to page'()
+            'current url should be' '/search/node'
+            'type into searchbox and submit' 'edit-search-block-form--2', 'TEST'
+            'filtered elements with given class are expected' 'search-snippet-info', 'ISTQB', 4
         }
     }
 }
